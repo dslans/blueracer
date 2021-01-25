@@ -14,16 +14,34 @@ def reward_function(params):
     # Input Parameters
     # ------------------------------------------------------
     all_wheels_on_track = params['all_wheels_on_track']
+    track_width = params['track_width']
 
 
     # ------------------------------------------------------
     # Default Reward
     # ------------------------------------------------------
-    reward  = 1.0
+    reward  = 1e-3
 
     # ------------------------------------------------------
     # Keep the car on the track
     # ------------------------------------------------------
+
+    ## ------ Rewards ------
+    if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
+        reward = 1.0
+
+    ## ------ Punishments ------
     # If the car goes off the track, assign zero reward
-    if all_wheels_on_track == False:
+    if not all_wheels_on_track:
         reward = 1e-3
+
+    # ------------------------------------------------------
+    # Speed
+    # ------------------------------------------------------
+
+    # ------------------------------------------------------
+    # Steering
+    # ------------------------------------------------------
+
+
+    return reward
