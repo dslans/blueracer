@@ -18,3 +18,8 @@ This is a good overall video that encompasses all the details of DeepRacer
 
 **DeepRacer Hacks:** https://www.youtube.com/watch?v=rpMus-mj4fo
 Interesting video of how a non-ML person used a few strategies to win DeepRacer. Details 3 main areas to focus on with reward function.
+
+## Blogs
+
+**Advanced Guide to AWS DeepRacer:** https://towardsdatascience.com/an-advanced-guide-to-aws-deepracer-2b462c37eea#:~:text=The%20main%20objective%20when%20coding,episode%20should%20receive%20more%20reward.
+This is one of the top google searches for DeepRacer guides. It goes through some advanced topics in improving the race times.
