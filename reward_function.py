@@ -42,6 +42,7 @@ def reward_function(params):
     # Speed
     # ------------------------------------------------------
 
+    # Penalize slow speed 
     SPEED_THRESHOLD = 1.0 # threshold for low speed
     if speed < SPEED_THRESHOLD:
         reward *= 0.5
