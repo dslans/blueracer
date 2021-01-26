@@ -26,4 +26,4 @@ This is one of the top google searches for DeepRacer guides. It goes through som
 
 ## Additional Resources
 
-**BakerTilly DeepRacer Workshop Github:** tinyurl.com/bakertillydeepracerworkshop
+**BakerTilly DeepRacer Workshop Github:** https://github.com/aws-samples/aws-deepracer-workshops/tree/master/Workshops/2020-SummitWorkshops
