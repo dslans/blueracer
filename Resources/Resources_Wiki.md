@@ -23,3 +23,7 @@ Interesting video of how a non-ML person used a few strategies to win DeepRacer.
 
 **Advanced Guide to AWS DeepRacer:** https://towardsdatascience.com/an-advanced-guide-to-aws-deepracer-2b462c37eea#:~:text=The%20main%20objective%20when%20coding,episode%20should%20receive%20more%20reward.
 This is one of the top google searches for DeepRacer guides. It goes through some advanced topics in improving the race times.
+
+## Additional Resources
+
+**BakerTilly DeepRacer Workshop Github:** tinyurl.com/bakertillydeepracerworkshop
