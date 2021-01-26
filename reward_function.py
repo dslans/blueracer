@@ -22,7 +22,7 @@ def reward_function(params):
     # ------------------------------------------------------
     # Default Reward
     # ------------------------------------------------------
-    reward  = 1e-3 # Should default reward be high or low?
+    reward  = 1.0
 
     # ------------------------------------------------------
     # Keep the car on the track
@@ -44,17 +44,19 @@ def reward_function(params):
 
     SPEED_THRESHOLD = 1.0 # threshold for low speed
     if speed < SPEED_THRESHOLD:
-        reward = 0.5
-    else:
-        reward = 1.0
+        reward *= 0.5
 
     # ------------------------------------------------------
     # Steering
     # ------------------------------------------------------
 
+    # Penalize if car steer too much to prevent zigzag (range -30:30 degrees)
+    ABS_STEERING_THRESHOLD = 20.0
+    if steering > ABS_STEERING_THRESHOLD:
+        reward *= 0.8
 
     # ------------------------------------------------------
     # Waypoints
     # ------------------------------------------------------
 
-    return reward
+    return float(reward)
