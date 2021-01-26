@@ -1,0 +1,41 @@
+# Hyperparameters
+- Batch Size
+    - defines how much training data the model should work through before each update
+    - in DeepRacer: how many images are used for training
+    - 32, 64, 128, 256, 512
+- Number of Epochs
+    - How many times to loop through the batch data set before updating training weights
+    - not required in DeepRacer
+    - integers 3-10
+- Learning Rate
+    - Controls the speed at which the algorithm learns
+    - Too large: prevents weights from approaching an optimal solution
+    - Too small: Takes too long to arrive at minimum loss
+    - Default is set to .001 in DeepRacer
+- Exploration
+    - Gives an option to find a balance between exploitation and exploration
+    - Exploitation: makes decisions given the information it has at the time
+    - Exploration: Gathers additional information beyond what’s already been collected
+    - Helps to find a high reward path that may not have been discovered before
+    - Default: CategoricalParameters - categorical exploration for a discrete action space
+        - EpsilonGreedy - continuous action space
+    - Helps prevent the neural net from being stuck in an action space
+- Entropy
+    - Controls the degree of randomness of an action that an agent (vehicle) may take in a given situation
+    - larger: the more random actions the car will take
+    - if it doesn’t take new actions it could get stuck
+- Discount Factor
+    - helps model decide extent to which future rewards should contribute to the overall sum of expected rewards
+    - goal of RL algo is to maximize sum of rewards over the course of some time
+    - discount factor can define time
+    - larger: looks future into the future to consider rewards
+    - smaller: agent only considers immediate rewards
+    - can be set from 0 to 1
+- Loss Type
+    - objective function to update network weights
+    - Huber loss (default): takes smaller increments compared to MSE. Use if there are convergence problems.
+    - MSE loss: trains faster than Huber
+- Number of Episodes
+    - number of tasks your algorithm goes through in training
+    - defines how many times you’ll go through loop of all tasks during training
+    - values 1-1000 (default: 20)
