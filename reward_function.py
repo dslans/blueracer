@@ -21,6 +21,7 @@ def reward_function(params):
     progress = params['progress'] # progress is 0-100 (percent)
     is_left_of_center = params['is_left_of_center']
     is_reversed = params['is_reversed'] # True=Clockwise
+    steering = abs(params['steering_angle'])
 
     # ------------------------------------------------------
     # Default Reward
