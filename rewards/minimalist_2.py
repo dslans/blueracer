@@ -36,6 +36,10 @@ def reward_function(params):
         # Give additional reward if the car pass every 60 steps faster than expected
         if (steps % TOTAL_NUM_STEPS/5) == 0 and progress > (steps / TOTAL_NUM_STEPS) * 100 :
             reward *= 1.25
+    else:
+        # If car goes off track, assign 0 reward
+        if not all_wheels_on_track:
+            reward = 1e-3
 
     # ------------------------------------------------------
     # Obvious Punishments
@@ -50,11 +54,6 @@ def reward_function(params):
     MINIMUM_SPEED = 1.6 # This was calculated in Daniel Gonzalez blog
     if (progress > 2) and (speed < MINIMUM_SPEED):
         reward = 1e-3
-
-    # If car goes off track, assign 0 reward
-    if not all_wheels_on_track:
-        reward = 1e-3
-
 
 
     return float(reward)
