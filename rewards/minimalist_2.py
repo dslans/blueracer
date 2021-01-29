@@ -48,8 +48,8 @@ def reward_function(params):
 
     # Set a minimum speed
     MINIMUM_SPEED = 1.6 # This was calculated in Daniel Gonzalez blog
-    if speed < MINIMUM_SPEED:
-        reward *= 0.8
+    if (progress > 2) and (speed < MINIMUM_SPEED):
+        reward = 1e-3
 
     # If car goes off track, assign 0 reward
     if not all_wheels_on_track:
