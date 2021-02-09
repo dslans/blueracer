@@ -28,7 +28,7 @@
     - helps model decide extent to which future rewards should contribute to the overall sum of expected rewards
     - goal of RL algo is to maximize sum of rewards over the course of some time
     - discount factor can define time
-    - larger: looks future into the future to consider rewards
+    - larger: looks further into the future to consider rewards
     - smaller: agent only considers immediate rewards
     - can be set from 0 to 1
 - Loss Type

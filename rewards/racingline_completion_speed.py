@@ -35,22 +35,18 @@ def reward_function(params):
 
     # EDIT v2: Originally there was too much reward for speed, so I increased
     # the reward for the centerline (added **2)
-
     if all_wheels_on_track:
-        reward = 1 - (distance_from_center - track_width/2)**2
+        reward = (1 - (distance_from_center - track_width/2))**4
 
-        # incentivize speed
-        reward *= speed
+        # reward speed
+        reward *= speed**2
+
+        # reward progress
+        reward += ((progress / steps))
 
     else:
         # if the car is off track, no reward
         reward = 1e-3
-
-
-    # ------------------------------------------------------
-    # Progress
-    # ------------------------------------------------------
-    # Placeholder for progress reward
 
     # ------------------------------------------------------
     # Additional Punishments
@@ -61,5 +57,7 @@ def reward_function(params):
     if steering > ABS_STEERING_THRESHOLD:
         reward *= 0.8
 
+    if progress == 100:
+        reward = 50000
 
     return float(reward)
